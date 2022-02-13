@@ -833,7 +833,7 @@
 
         </div>
 
-        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+        <!-- <div class="row mt-5 justify-content-center" data-aos="fade-up">
           <div class="col-lg-10">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
@@ -859,8 +859,43 @@
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
+        </div> -->
 
-        </div>
+
+
+        <!-- https://formspree.io/ -->
+        <div class="row mt-5 justify-content-center" data-aos="fade-up" class="formspree-email-form" >
+          <div class="col-lg-10">
+            <form action="https://formspree.io/f/xdobgoyd" method="POST" role="form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <!-- <div class="form-group mt-3">
+                <input type="subject" class="form-control" name="subject" id="subject" placeholder="Phone Number" required>
+              </div> -->
+
+              <div class="form-group mt-3">
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number (eg. 123-456-7890)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+              </div>
+
+
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                  required></textarea>
+              </div>
+
+              <div class="my-3">
+              </div>
+
+              <div class="text-center"><button type="submit" class = "submitbutton">Send Message</button></div>
+            </form>
+          </div>
+        </div><!-- https://formspree.io/ END-->
 
       </div>
     </section><!-- End Contact Section -->
@@ -922,7 +957,9 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>To keep updates</p>
-            <form action="" method="post">
+            <form 
+            action="https://formspree.io/f/xdobgoyd"
+            method="POST">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
 
