@@ -44,6 +44,18 @@
 
   gtag('config', 'G-BC2QS3QLG1');
 </script>
+
+
+<script>
+
+function addTelSpace(){
+ var inputValue = document.getElementById("phone").value;
+ var inputValueLength = inputValue.length;
+ if(inputValueLength == 3 || inputValueLength == 7){
+  document.getElementById("phone").value = inputValue+"-"; 
+ }
+}
+  </script>
 </head>
 
 <body>
@@ -794,44 +806,10 @@
     <section id="contact" class="contact">
       <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
+      <div class="section-title" data-aos="fade-up">
           <h2>Contact Us</h2>
-          <p></p>
         </div>
 
-        <div class="row no-gutters justify-content-center" data-aos="fade-up">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <!-- <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div> -->
-
-              <div class="email mt-4">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p><a href="mailto:info@condosmetropark.com">info@condosmetropark.com</a></p>
-              </div>
-
-              <div class="phone mt-4">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 289-808-6319</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <iframe style="border:0; width: 100%; height: 270px;"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1441.844691803081!2d-79.33363907970018!3d43.71700383531855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cda9a383b6f9%3A0xd50cad3db3e10aad!2s25%20St%20Dennis%20Dr%2C%20North%20York%2C%20ON%20M3C%201E6!5e0!3m2!1sen!2sca!4v1644644173708!5m2!1sen!2sca"
-              frameborder="0" allowfullscreen></iframe>
-          </div>
-
-        </div>
 
         <!-- <div class="row mt-5 justify-content-center" data-aos="fade-up">
           <div class="col-lg-10">
@@ -880,22 +858,61 @@
               </div> -->
 
               <div class="form-group mt-3">
-                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number (eg. 123-456-7890)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required onkeypress="addTelSpace()" maxlength="13">
               </div>
 
-
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                  required></textarea>
+                <label for="isAgent">Are you agent</label>&ensp;&ensp;&ensp;&ensp;
+                <select id="isAgent" name="isAgent">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
               </div>
 
               <div class="my-3">
               </div>
 
-              <div class="text-center"><button type="submit" class = "submitbutton">Send Message</button></div>
+              <div class="text-center"><button type="submit" class = "submitbutton">Get Price and Incentive Package</button></div>
+              <p></p>
             </form>
           </div>
         </div><!-- https://formspree.io/ END-->
+        
+      <div class="row no-gutters justify-content-center" data-aos="fade-up">
+        <div class="col-lg-5 d-flex align-items-stretch">
+          <div class="info">
+            <!-- <div class="address">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>A108 Adam Street, New York, NY 535022</p>
+            </div> -->
+
+            <div class="email mt-4">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p><a href="mailto:info@condosmetropark.com">info@condosmetropark.com</a></p>
+            </div>
+
+            <div class="phone mt-4">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>+1 289-808-6319</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-5 d-flex align-items-stretch">
+          <iframe style="border:0; width: 100%; height: 270px;"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1441.844691803081!2d-79.33363907970018!3d43.71700383531855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cda9a383b6f9%3A0xd50cad3db3e10aad!2s25%20St%20Dennis%20Dr%2C%20North%20York%2C%20ON%20M3C%201E6!5e0!3m2!1sen!2sca!4v1644644173708!5m2!1sen!2sca"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+      </div>
+
+
+
 
       </div>
     </section><!-- End Contact Section -->
