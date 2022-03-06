@@ -48,13 +48,24 @@
 
 <script>
 
+// function addTelSpace(){
+//  var inputValue = document.getElementById("phone").value;
+//  var inputValueLength = inputValue.length;
+//  if(inputValueLength == 3 || inputValueLength == 7){
+//   document.getElementById("phone").value = inputValue+"-"; 
+//  }
+// }
+
 function addTelSpace(){
  var inputValue = document.getElementById("phone").value;
  var inputValueLength = inputValue.length;
- if(inputValueLength == 3 || inputValueLength == 7){
-  document.getElementById("phone").value = inputValue+"-"; 
+ if(inputValueLength == 1 && inputValue != '+' ){
+  document.getElementById("phone").value = "+1"+inputValue;
+ }else if(inputValueLength == 2 && inputValue != '+1' ){
+  document.getElementById("phone").value = "+1"+inputValue;
  }
 }
+
   </script>
 
 
@@ -132,7 +143,8 @@ function addTelSpace(){
       <div class="my-3">
       </div>
       <p></p>
-    <form action="https://formspree.io/f/xdobgoyd" method="POST" role="form">
+
+    <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="POST" role="form">
       <div class="row">
         <div class="col-md-6 form-group">
           <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -146,18 +158,27 @@ function addTelSpace(){
       <p></p>
       <div class="row">
         <div class="col-md-6 form-group">
-          <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number (eg. xxx-xxx-xxxx)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required onkeypress="addTelSpace()" maxlength="13">
+          <label for="phone"><font color="white">Phone Number (+1xxxxxxxxxx)</font></label>
+          <input type="tel" class="form-control" name="custom_phone" id="phone" 
+          value="+1"placeholder="Phone Number (eg. +1xxxxxxxxxx)" pattern="[+]{1}[0-9]{11}" required onkeypress="addTelSpace()" maxlength="13">
         </div>
+
         <div class="col-md-6 form-group mt-3 mt-md-0">
           <label for="isAgent"><font color="white">Are you agent</font></label>&ensp;&ensp;&ensp;&ensp;
-          <select id="isAgent" name="isAgent">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+          <select id="isAgent" name="custom_agent[]">
+            <option value="YER">Yes</option>
+            <option value="NAD">No</option>
           </select>
         </div>
       </div>
 
       <div class="my-3">
+        <input type="hidden" name="campaign_token" value="zzrB4" />
+        <input
+        type="hidden"
+        name="thankyou_url"
+        value="https://www.condosmetropark.com/metroparkwelcome.html"
+        />
       </div>
 
       <div class="text-center"><button type="submit" class = "submitbutton">Get Price and Incentive Package</button></div>
@@ -940,7 +961,7 @@ function addTelSpace(){
         <!-- https://formspree.io/ -->
         <div class="row mt-5 justify-content-center" data-aos="fade-up" class="formspree-email-form" >
           <div class="col-lg-10">
-            <form action="https://formspree.io/f/xdobgoyd" method="POST" role="form">
+            <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="POST" role="form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -949,25 +970,33 @@ function addTelSpace(){
                   <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                 </div>
               </div>
-              <!-- <div class="form-group mt-3">
-                <input type="subject" class="form-control" name="subject" id="subject" placeholder="Phone Number" required>
-              </div> -->
-
-              <div class="form-group mt-3">
-                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number (eg. xxx-xxx-xxxx)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required onkeypress="addTelSpace()" maxlength="13">
+              <p></p>
+        
+              <p></p>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="phone"><font color="black">Phone Number (+1xxxxxxxxxx)</font></label>
+                  <input type="tel" class="form-control" name="custom_phone" id="phone" 
+                  value="+1"placeholder="Phone Number (eg. +1xxxxxxxxxx)" pattern="[+]{1}[0-9]{11}" required onkeypress="addTelSpace()" maxlength="13">
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <label for="isAgent"><font color="black">Are you agent</font></label>&ensp;&ensp;&ensp;&ensp;
+                  <select id="isAgent" name="custom_agent[]">
+                    <option value="YER">Yes</option>
+                    <option value="NAD">No</option>
+                  </select>
+                </div>
               </div>
-
-              <div class="form-group mt-3">
-                <label for="isAgent">Are you agent</label>&ensp;&ensp;&ensp;&ensp;
-                <select id="isAgent" name="isAgent">
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select>
-              </div>
-
+        
               <div class="my-3">
+                <input type="hidden" name="campaign_token" value="zzrB4" />
+                <input
+                type="hidden"
+                name="thankyou_url"
+                value="https://www.condosmetropark.com/metroparkwelcome.html"
+                />
               </div>
-
+        
               <div class="text-center"><button type="submit" class = "submitbutton">Get Price and Incentive Package</button></div>
               <p></p>
             </form>
